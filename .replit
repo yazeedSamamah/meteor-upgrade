@@ -14,4 +14,13 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd app && meteor run --port 5000"
+args = "cd app && meteor run"
+
+[[workflows.workflow]]
+name = "Run Meteor Custom Port"
+author = 45459491
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd app && PORT=5000 meteor run"
