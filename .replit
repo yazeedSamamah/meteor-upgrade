@@ -1,0 +1,17 @@
+modules = ["nodejs-20"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["meteor-git"]
+
+[workflows]
+runButton = "Run Meteor"
+
+[[workflows.workflow]]
+name = "Run Meteor"
+author = 45459491
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd app && meteor run --port 5000"
